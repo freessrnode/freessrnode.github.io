@@ -587,13 +587,13 @@ h1, h2, h3, h4, h5,
     @media (max-width: 991.98px) {
       .intro-section:before {
         width: 100%; } }
-  .intro-section h1 {
+  .intro-section h1, .intro-section h2 {
     font-size: 60px;
     font-weight: 900;
     line-height: 1;
     color: #fff; }
     @media (max-width: 991.98px) {
-      .intro-section h1 {
+      .intro-section h1, .intro-section h2 {
         font-size: 34px; } }
   .intro-section p {
     color: rgba(255, 255, 255, 0.8);
