@@ -5,7 +5,7 @@
         <link rel="canonical" href="https://freessrnode.github.io/news/article-19327.htm" />
     <title>Java 18 新特性：简单Web服务器 jwebserver</title>
         <meta name="description" content="在今年3月下旬的时候，Java版本已经更新到了18。接下来DD计划持续做一个系列，主要更新从Java 9开始的各种更新内容，但我不全部都介绍，主要挑一些有意思的内容，以文章和视频的方式来给大家介绍和学" />
-        <link rel="icon" href="__ADDON__/img/freessrnode/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/freessrnode/favicon.ico" type="image/x-icon"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
@@ -21,8 +21,7 @@
     <link rel="stylesheet" href="/assets/website/css/freessrnode/aos.css">
     <link href="/assets/website/css/freessrnode/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/style.css">
-    
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KPLB94DVG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -115,7 +114,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                                          				  				  				<p>在今年3月下旬的时候，Java版本已经更新到了18。接下来DD计划持续做一个系列，主要更新从Java 9开始的各种更新内容，但我不全部都介绍，主要挑一些有意思的内容，以文章和视频的方式来给大家介绍和学习。为了第一时间获得内容更新，对文章形式感兴趣的小伙伴可以关注我的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.didispace.com"  target="_blank" rel="nofollow">博客</a>或者公众号（程序猿DD），对视频形式感兴趣的可以关注我的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://space.bilibili.com/396803537"  target="_blank" rel="nofollow">B站</a>或视频号（程序猿DD）。</p> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://openjdk.java.net/jeps/408"  target="_blank" rel="nofollow">JEP 408: Simple Web Server</a>，是这次Java 18推出的一个比较独立的全新功能点。我们可以通过命令行工具来启动一个提供静态资源访问的迷你Web服务器。</p> <p>该工具的定位官方文档中说了一堆：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cebd54b9ce6030a16335e4c6942f96bb.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>这里我简单总结几点，方便大家理解：</p> <ul> <li>构建目的是应用于测试与教学，不是为了替代Jetty、Nginx等高级服务器</li> <li>不提供身份验证、访问控制或加密等安全功能</li> <li>仅支持HTTP/1.1，不支持HTTPS</li> <li>仅支持GET、HEAD请求</li> <li>可以通过命令行、Java类启动</li> </ul> <p>下面我们通过一个构建HTML页面的例子，来尝试一下jwebserver的功能。</p> </h1> <p>第一步：创建一个文件夹，比如就叫jwebserver</p> <p>第二步：创建一个html文件，就叫<code>index.html</code>吧</p> <p>第三步：随便写点HTML内容，比如下面这样（懒的敲的话，可以根据图片内的提示直接获取本案例需要的所有内容）：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/084705ce0a59f3cd8b16c64dd410f3dc.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> </h1> <p>打开终端，输入命令：</p> <pre><code>$ jwebserver</code></pre> <p>启动速度很快，可以看到如下输出：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3f1e3eeddaaa7cca3d63d8931f259633.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>尝试访问一下<code>http://127.0.0.1:8000/</code>，就可以获得之前准备的HTML内容了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/7748a84f3189d659dc5f4cb08074d6d0.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>同时，在终端也看到了请求日志：</p> <pre><code>127.0.0.1 - - [20/4月/2022:00:10:58 +0800] "GET / HTTP/1.1" 200 - 127.0.0.1 - - [20/4月/2022:00:10:58 +0800] "GET /banner-spring-boot.png HTTP/1.1" 200 -</code></pre> <p>关于jwebserver还有一些可选的参数，具体有这些：</p> <pre><code>-h or -? or --help  Prints the help message and exits.  -b addr or --bind-address addr  Specifies the address to bind to.  Default: 127.0.0.1 or ::1 (loopback).  For  all interfaces use -b 0.0.0.0 or -b ::.  -d dir or --directory dir  Specifies the directory to serve.  Default: current directory.  -o level or --output level  Specifies the output format.  none | info | verbose.  Default: info.  -p port or --port port  Specifies the port to listen on.  Default: 8000.  -version or --version  Prints the version information and exits.</code></pre> <p>其中比较有用的是</p> <ul> <li><code>-b</code>：要绑定的ip地址</li> <li><code>-p</code>：要启动的访问端口</li> <li><code>-d</code>：要提供服务的目录</li> <li><code>-o</code>：控制台的输出级别</li> </ul> <p>所以一个较为完整的启动命令是这样的：</p> <pre><code>jwebserver -p 9000 -d / -b 127.0.0.1 -o info</code></pre> <p>这条命令是一个以根目录<code>/</code>启动的服务器，服务端口是9000，绑定地址是127.0.0.1，控制台输出级别使用info。</p> <p>再尝试访问一下：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://127.0.0.1:9000/"  target="_blank" rel="nofollow">http://127.0.0.1:9000/</a> ，可以看到根目录<code>/</code>下的文件夹和文件：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9655dd416a0df6c4f8cf282e012b14a3.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>怎么样？是不是还挺简单好用的？好了，今天的分享就到这里！如果您学习过程中如遇困难？可以加入我们超高质量的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.didispace.com/join-group-spring/index.html"  target="_blank" rel="nofollow">技术交流群</a>，参与交流与讨论，更好的学习与进步！</p> <p>另外，不要走开，关注我！下一篇更新如何使用Java代码来启动这个服务器！</p> <blockquote> <p>欢迎关注我的公众号：程序猿DD。第一时间了解前沿行业消息、分享深度技术干货、获取优质学习资源</p> </blockquote> 			                <div class="clearfix"></div>
+                                        <input type="hidden" id="share-website-info" data-name="SSR Windows免费节点订阅站" data-url="https://ssrwindows.github.io">
+                  				  				  				<p>在今年3月下旬的时候，Java版本已经更新到了18。接下来DD计划持续做一个系列，主要更新从Java 9开始的各种更新内容，但我不全部都介绍，主要挑一些有意思的内容，以文章和视频的方式来给大家介绍和学习。为了第一时间获得内容更新，对文章形式感兴趣的小伙伴可以关注我的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.didispace.com"  target="_blank" rel="nofollow">博客</a>或者公众号（程序猿DD），对视频形式感兴趣的可以关注我的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://space.bilibili.com/396803537"  target="_blank" rel="nofollow">B站</a>或视频号（程序猿DD）。</p> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://openjdk.java.net/jeps/408"  target="_blank" rel="nofollow">JEP 408: Simple Web Server</a>，是这次Java 18推出的一个比较独立的全新功能点。我们可以通过命令行工具来启动一个提供静态资源访问的迷你Web服务器。</p> <p>该工具的定位官方文档中说了一堆：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cebd54b9ce6030a16335e4c6942f96bb.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>这里我简单总结几点，方便大家理解：</p> <ul> <li>构建目的是应用于测试与教学，不是为了替代Jetty、Nginx等高级服务器</li> <li>不提供身份验证、访问控制或加密等安全功能</li> <li>仅支持HTTP/1.1，不支持HTTPS</li> <li>仅支持GET、HEAD请求</li> <li>可以通过命令行、Java类启动</li> </ul> <p>下面我们通过一个构建HTML页面的例子，来尝试一下jwebserver的功能。</p> </h1> <p>第一步：创建一个文件夹，比如就叫jwebserver</p> <p>第二步：创建一个html文件，就叫<code>index.html</code>吧</p> <p>第三步：随便写点HTML内容，比如下面这样（懒的敲的话，可以根据图片内的提示直接获取本案例需要的所有内容）：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/084705ce0a59f3cd8b16c64dd410f3dc.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> </h1> <p>打开终端，输入命令：</p> <pre><code>$ jwebserver</code></pre> <p>启动速度很快，可以看到如下输出：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3f1e3eeddaaa7cca3d63d8931f259633.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>尝试访问一下<code>http://127.0.0.1:8000/</code>，就可以获得之前准备的HTML内容了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/7748a84f3189d659dc5f4cb08074d6d0.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>同时，在终端也看到了请求日志：</p> <pre><code>127.0.0.1 - - [20/4月/2022:00:10:58 +0800] "GET / HTTP/1.1" 200 - 127.0.0.1 - - [20/4月/2022:00:10:58 +0800] "GET /banner-spring-boot.png HTTP/1.1" 200 -</code></pre> <p>关于jwebserver还有一些可选的参数，具体有这些：</p> <pre><code>-h or -? or --help  Prints the help message and exits.  -b addr or --bind-address addr  Specifies the address to bind to.  Default: 127.0.0.1 or ::1 (loopback).  For  all interfaces use -b 0.0.0.0 or -b ::.  -d dir or --directory dir  Specifies the directory to serve.  Default: current directory.  -o level or --output level  Specifies the output format.  none | info | verbose.  Default: info.  -p port or --port port  Specifies the port to listen on.  Default: 8000.  -version or --version  Prints the version information and exits.</code></pre> <p>其中比较有用的是</p> <ul> <li><code>-b</code>：要绑定的ip地址</li> <li><code>-p</code>：要启动的访问端口</li> <li><code>-d</code>：要提供服务的目录</li> <li><code>-o</code>：控制台的输出级别</li> </ul> <p>所以一个较为完整的启动命令是这样的：</p> <pre><code>jwebserver -p 9000 -d / -b 127.0.0.1 -o info</code></pre> <p>这条命令是一个以根目录<code>/</code>启动的服务器，服务端口是9000，绑定地址是127.0.0.1，控制台输出级别使用info。</p> <p>再尝试访问一下：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://127.0.0.1:9000/"  target="_blank" rel="nofollow">http://127.0.0.1:9000/</a> ，可以看到根目录<code>/</code>下的文件夹和文件：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9655dd416a0df6c4f8cf282e012b14a3.jpg" alt="Java 18 新特性：简单Web服务器 jwebserver"></p> <p>怎么样？是不是还挺简单好用的？好了，今天的分享就到这里！如果您学习过程中如遇困难？可以加入我们超高质量的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.didispace.com/join-group-spring/index.html"  target="_blank" rel="nofollow">技术交流群</a>，参与交流与讨论，更好的学习与进步！</p> <p>另外，不要走开，关注我！下一篇更新如何使用Java代码来启动这个服务器！</p> <blockquote> <p>欢迎关注我的公众号：程序猿DD。第一时间了解前沿行业消息、分享深度技术干货、获取优质学习资源</p> </blockquote> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-18898.htm">宠物用品批发零售（宠物用品批发连锁）</a></p>
                                         <p>下一个：<a href="/news/article-19329.htm">深圳动物防疫站周末上班吗（深圳动物防疫站周末上班吗今天）</a></p>
@@ -128,16 +128,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-3-node-share.htm" title="「10月3日」最高速度19.8M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费机场订阅节点链接">「10月3日」最高速度19.8M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-17-hiddify-next-node.htm" title="「9月17日」最高速度20.2M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费机场订阅节点链接">「9月17日」最高速度20.2M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-12-node-share.htm" title="「9月12日」最高速度18.7M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接">「9月12日」最高速度18.7M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-high-speed-nodes.htm" title="「11月19日」最高速度20.3M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费机场订阅节点链接">「11月19日」最高速度20.3M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-1-today-hiddify-next-node.htm" title="「9月1日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费机场订阅节点链接">「9月1日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-hiddify-next-node-github.htm" title="「10月22日」最高速度21.8M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费机场订阅节点链接">「10月22日」最高速度21.8M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/news/article-19329.htm" title="深圳动物防疫站周末上班吗（深圳动物防疫站周末上班吗今天）">深圳动物防疫站周末上班吗（深圳动物防疫站周末上班吗今天）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-node-share-links.htm" title="「11月16日」最高速度20.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接">「11月16日」最高速度20.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-hiddify-next-windows.htm" title="「11月26日」最高速度19M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费机场订阅节点链接">「11月26日」最高速度19M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-30-free-node-subscribe-links.htm" title="「8月30日」最高速度20.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费机场订阅节点链接">「8月30日」最高速度20.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-20-node-share-links.htm" title="「8月20日」最高速度18.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费机场订阅节点链接">「8月20日」最高速度18.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-28-hiddify-next-node-github.htm" title="「8月28日」最高速度21.7M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费机场订阅节点链接">「8月28日」最高速度21.7M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-22080.htm" title="宠物粮食商标 宠物粮食商标类别">宠物粮食商标 宠物粮食商标类别</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-hiddify-next-node-share.htm" title="「10月16日」最高速度20.3M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费机场订阅节点链接">「10月16日」最高速度20.3M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-19785.htm" title="MySQL日期和时间数据类型（DATE、TIME、 DATETIME、 TIMESTAMP和YEAR）">MySQL日期和时间数据类型（DATE、TIME、 DATETIME、 TIMESTAMP和YEAR）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-subscribe-node.htm" title="「10月28日」最高速度21.1M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费机场订阅节点链接">「10月28日」最高速度21.1M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-latest-hiddify-next-node.htm" title="「11月10日」最高速度21.6M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费机场订阅节点链接">「11月10日」最高速度21.6M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-20243.htm" title="动物疫苗在哪里买便宜些（动物疫苗经销商）">动物疫苗在哪里买便宜些（动物疫苗经销商）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-node-share.htm" title="「12月4日」最高速度22.8M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接">「12月4日」最高速度22.8M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
@@ -149,7 +149,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -176,6 +176,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
                             <p>
                                 <a href="/">FreeSSRNode免费节点官网</a> 版权所有 Powered by WordPress
                             </p>
