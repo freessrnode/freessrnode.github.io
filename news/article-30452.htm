@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freessrnode.github.io/news/article-30452.htm" />
+    <title>@Valid 参数校验不生效问题解决</title>
+        <meta name="description" content="@Valid 参数校验不生效问题解决  问题现象 手动检查 不生效原因    import lombok.Data;  import javax.validation.constraints.NotN" />
+        <link rel="icon" href="/assets/website/img/freessrnode/favicon.ico" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/freessrnode/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/freessrnode/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/aos.css">
+    <link href="/assets/website/css/freessrnode/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2KPLB94DVG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2KPLB94DVG');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" data-page="detail">
+    <div class="site-wrap">
+                <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <div class="py-2 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-9 d-none d-lg-block">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <div class="site-logo">
+                                                <a href="/" class="d-block">
+                            <span>Free SSR Node</span>
+                        </a>
+                                            </div>
+                    <div class="mr-auto">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                                                <li>
+                                    <a href="/" class="nav-link text-left">首页</a>
+                                </li>
+                                                                <li>
+                                    <a href="/free-nodes/" class="nav-link text-left">免费节点</a>
+                                </li>
+                                                                <li>
+                                    <a href="/paid-subscribe/" class="nav-link text-left">推荐机场</a>
+                                </li>
+                                                                <li>
+                                    <a href="/news/" class="nav-link text-left">新闻资讯</a>
+                                </li>
+                                                                <li>
+                                    <a href="#" class="nav-link text-left">关于</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link text-left">联系</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="social-wrap">
+                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a>
+                            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="intro-section small" style="background-image: url('__ADDON__/img/freessrnode/hero_1.jpg');">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-7 mx-auto text-center" data-aos="fade-up">
+                        <div class="intro">
+                            <h1>@Valid 参数校验不生效问题解决</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="SSR Windows免费节点订阅站" data-url="https://ssrwindows.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <div class="toc"> <h3>@Valid 参数校验不生效问题解决</h3> <ul> <li><a href="#_2" rel="nofollow">问题现象</a></li> <li><a href="#_45" rel="nofollow">手动检查</a></li> <li><a href="#_92" rel="nofollow">不生效原因</a></li> </ul> </div> </h1> <pre><code class="prism language-java"><span class="token keyword">import</span> lombok<span class="token punctuation">.</span>Data<span class="token punctuation">;</span>  <span class="token keyword">import</span> javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span>NotNull<span class="token punctuation">;</span>  <span class="token annotation punctuation">@Data</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IDDTO</span> <span class="token punctuation">{<!-- --></span>      <span class="token annotation punctuation">@NotNull</span>     <span class="token keyword">private</span> Long id<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <pre><code class="prism language-java"><span class="token annotation punctuation">@Slf4j</span> <span class="token annotation punctuation">@Controller</span> <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/example"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleController</span> <span class="token punctuation">{<!-- --></span>      <span class="token annotation punctuation">@POSTMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/valid"</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> BaseResponseVO <span class="token function">valid</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Valid</span> IDDTO idDTO<span class="token punctuation">,</span> BindingResult bindingResult<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         <span class="token keyword">if</span><span class="token punctuation">(</span>bindingResult<span class="token punctuation">.</span><span class="token function">hasErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"what fuck"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token keyword">return</span> BaseResponseVO<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>  <span class="token punctuation">}</span> </code></pre> <p>看起来像不像会打印<code>what fuck</code>，实际上居然不会。实际上是因为Valid Property 会在json序列化构建Java Bean的时候，所以这里的Post请求还必须是<code>application/json</code> 即：</p> <pre><code class="prism language-java">    <span class="token annotation punctuation">@POSTMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/valid"</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> BaseResponseVO <span class="token function">valid</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Valid</span> <span class="token annotation punctuation">@RequestBody</span> IDDTO idDTO<span class="token punctuation">,</span> BindingResult bindingResult<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         <span class="token keyword">if</span><span class="token punctuation">(</span>bindingResult<span class="token punctuation">.</span><span class="token function">hasErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"what fuck"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token keyword">return</span> BaseResponseVO<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> </code></pre> </h1> <p>如果有其他情况发现<code>@Valid</code>不生效，提供一个手动检查的方案</p> <pre><code class="prism language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections<span class="token punctuation">.</span>CollectionUtils<span class="token punctuation">;</span>  <span class="token keyword">import</span> javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>ConstraintViolation<span class="token punctuation">;</span> <span class="token keyword">import</span> javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>Validation<span class="token punctuation">;</span> <span class="token keyword">import</span> javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>Validator<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashMap<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Set<span class="token punctuation">;</span>  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ValidateUtil</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">private</span> <span class="token keyword">static</span> Validator validator <span class="token operator">=</span> Validation<span class="token punctuation">.</span><span class="token function">buildDefaultValidatorFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token punctuation">.</span><span class="token function">getValidator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">beanValidate</span><span class="token punctuation">(</span>Object obj<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         Map<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">,</span> String<span class="token punctuation">&gt;</span></span> validatedMsg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         Set<span class="token operator">&lt;</span>ConstraintViolation<span class="token generics function"><span class="token punctuation">&lt;</span>Object<span class="token punctuation">&gt;</span></span><span class="token operator">&gt;</span> constraintViolations <span class="token operator">=</span> validator<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">for</span> <span class="token punctuation">(</span>ConstraintViolation<span class="token generics function"><span class="token punctuation">&lt;</span>Object<span class="token punctuation">&gt;</span></span> c <span class="token operator">:</span> constraintViolations<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             validatedMsg<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">getPropertyPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> c<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token keyword">if</span> <span class="token punctuation">(</span>CollectionUtils<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>constraintViolations<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span>validatedMsg<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>      <span class="token punctuation">}</span>  <span class="token punctuation">}</span> </code></pre> <p>即：</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Slf4j</span> <span class="token annotation punctuation">@Controller</span> <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/example"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleController</span> <span class="token punctuation">{<!-- --></span>      <span class="token annotation punctuation">@POSTMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/valid"</span><span class="token punctuation">)</span>     <span class="token keyword">public</span> BaseResponseVO <span class="token function">valid</span><span class="token punctuation">(</span>IDDTO idDTO<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         ValidateUtil<span class="token punctuation">.</span><span class="token function">beanValidate</span><span class="token punctuation">(</span>idDTO<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> BaseResponseVO<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>  <span class="token punctuation">}</span> </code></pre> </h1> <p>笔者在开发过程中发现有如下一段日志，应该可以定位为什么<code>@Valid</code>不生效，笔者暂时比较忙，稍后再补充分析。如果有同学有兴趣，可以先自行分析。</p> <pre><code>2020-07-11 11:44:20,468 [main] DEBUG (OptionalValidatorFactoryBean:43) - Failed to set up a Bean Validation provider javax.validation.ValidationException: Unable to create a Configuration, because no Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath. 	at javax.validation.Validation$GenericBootstrapImpl.configure(Validation.java:271) ~[validation-api-1.1.0.Final.jar:?] 	at org.springframework.validation.beanvalidation.LocalValidatorFactoryBean.afterPropertiesSet(LocalValidatorFactoryBean.java:255) ~[spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean.afterPropertiesSet(OptionalValidatorFactoryBean.java:40) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1692) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) [spring-beans-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) [spring-context-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668) [spring-webmvc-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634) [spring-webmvc-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682) [spring-webmvc-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553) [spring-webmvc-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494) [spring-webmvc-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:171) [spring-webmvc-4.3.17.RELEASE.jar:4.3.17.RELEASE] 	at javax.servlet.GenericServlet.init(GenericServlet.java:244) [javax.servlet-3.0.0.v201112011016.jar:?]  </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30451.htm">当我们更改小于当前序列号的AUTO_INCREMENT值时，MySQL将返回什么？</a></p>
+                                        <p>下一个：<a href="/news/article-30928.htm">动物防疫站打疫苗要钱吗（动物防疫站打疫苗免费吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-27166.htm" title="数据结构详解·一树的初步">数据结构详解·一树的初步</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-2-hiddify-next-node-share.htm" title="「9月2日」最高速度23M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费机场订阅节点链接">「9月2日」最高速度23M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-20-today-hiddify-next-node.htm" title="「9月20日」最高速度21.4M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接">「9月20日」最高速度21.4M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-23920.htm" title="猫咪疫苗要打几针才算完成（猫咪疫苗打几针疫苗时间间隔）">猫咪疫苗要打几针才算完成（猫咪疫苗打几针疫苗时间间隔）</a></li>
+                        <li class="py-2"><a href="/news/article-23918.htm" title="两个月猫轻微抓伤有一点渗血怎么办啊（两个月大的猫咪抓破皮流了点血）">两个月猫轻微抓伤有一点渗血怎么办啊（两个月大的猫咪抓破皮流了点血）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-8-today-hiddify-next-node.htm" title="「9月8日」最高速度18.8M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接">「9月8日」最高速度18.8M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-19329.htm" title="深圳动物防疫站周末上班吗（深圳动物防疫站周末上班吗今天）">深圳动物防疫站周末上班吗（深圳动物防疫站周末上班吗今天）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-high-speed-nodes.htm" title="「11月18日」最高速度19.5M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接">「11月18日」最高速度19.5M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-hiddify-next-node.htm" title="「11月17日」最高速度18.3M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费机场订阅节点链接">「11月17日」最高速度18.3M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-node-share-links.htm" title="「11月16日」最高速度20.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接">「11月16日」最高速度20.9M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费机场订阅节点链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeSSRNode免费节点官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- loader -->
+      <div id="loader" class="show fullscreen">
+          <svg class="circular" width="48px" height="48px">
+              <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+              <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78" />
+          </svg>
+      </div>
+      <script src="/assets/website/js/frontend/freessrnode/jquery-3.5.1.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery-migrate-3.0.1.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery-ui.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/popper.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/bootstrap.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/owl.carousel.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.stellar.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.countdown.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/bootstrap-datepicker.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.easing.1.3.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/aos.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.fancybox.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.sticky.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.mb.YTPlayer.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/main.js"></script>
+      <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+      <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- .site-wrap -->
+</body>
+
+</html>
