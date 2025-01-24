@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freessrnode.github.io/news/article-45550.htm" />
+    <title>Java高级之LinkedList的ListIterator迭代器</title>
+        <meta name="description" content="先来看下面的示例： public class Demo {     public static void main(String[] args) throws IOException {       " />
+        <link rel="icon" href="/assets/website/img/freessrnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeSSRNode免费节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freessrnode.github.io/news/article-45550.htm" />
+    <meta property="og:site_name" content="FreeSSRNode免费节点官网" />
+    <meta property="og:title" content="Java高级之LinkedList的ListIterator迭代器" />
+    <meta property="og:image" content="https://freessrnode.github.io/uploads/20240813/23a04e7621949e81203f483da5121050.webp" />
+        <meta property="og:release_date" content="2025-01-24T09:28:18" />
+    <meta property="og:updated_time" content="2025-01-24T09:28:18" />
+        <meta property="og:description" content="先来看下面的示例： public class Demo {     public static void main(String[] args) throws IOException {       " />
+        
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java高级之LinkedList的ListIterator迭代器">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/freessrnode/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/assets/website/fonts/freessrnode/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/aos.css">
+    <link href="/assets/website/css/freessrnode/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/freessrnode/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2KPLB94DVG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2KPLB94DVG');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" data-page="detail">
+    <div class="site-wrap">
+                <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <div class="py-2 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-9 d-none d-lg-block">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <div class="site-logo">
+                                                <a href="/" class="d-block">
+                            <span>Free SSR Node</span>
+                        </a>
+                                            </div>
+                    <div class="mr-auto">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                                                <li>
+                                    <a href="/" class="nav-link text-left">首页</a>
+                                </li>
+                                                                <li>
+                                    <a href="/free-nodes/" class="nav-link text-left">免费节点</a>
+                                </li>
+                                                                <li>
+                                    <a href="/paid-subscribe/" class="nav-link text-left">推荐机场</a>
+                                </li>
+                                                                <li>
+                                    <a href="/news/" class="nav-link text-left">新闻资讯</a>
+                                </li>
+                                                                <li>
+                                    <a href="#" class="nav-link text-left">关于</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link text-left">联系</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="social-wrap">
+                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a>
+                            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="intro-section small" style="background-image: url('/assets/website/img/freessrnode/hero_1.jpg');">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-7 mx-auto text-center" data-aos="fade-up">
+                        <div class="intro">
+                            <h1>Java高级之LinkedList的ListIterator迭代器</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="SSR Windows免费节点订阅站" data-url="https://ssrwindows.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>先来看下面的示例：</p> <pre><code class="language-java">public class Demo {     public static void main(String[] args) throws IOException {         List&lt;String&gt; list = new LinkedList&lt;&gt;();         list.add("唐僧");         list.add("孙悟空");         list.add("猪八戒");         list.add("沙僧");         list.add("小白龙");         ListIterator&lt;String&gt; iterator = list.listIterator();          System.out.println(iterator.next());         System.out.println(iterator.next());         System.out.println(iterator.next());         System.out.println(iterator.next());         System.out.println(iterator.next());         // System.out.println(iterator.next());// 会抛出NoSuchElementException异常     } } /**  * 打印结果：  * 唐僧  * 孙悟空  * 猪八戒  * 沙僧  * 小白龙  */</code></pre> <p>那么该迭代器的原理到底是怎样的？查看该类的源码：</p> <pre><code class="language-java">    /**      * ListIterator&lt;E&gt;迭代器的实现类      */     private class ListItr implements ListIterator&lt;E&gt; {         // 全局变量，上一次执行 next() 或者 previos() 方法时的节点         private Node&lt;E&gt; lastReturned;         // 后继结点         private Node&lt;E&gt; next;         // 后继结点的索引         private int nextIndex;         // 将修改次数modCount赋给expectedModCount         // modCount是指实际修改次数         // expectedModCount是指期望修改次数         private int expectedModCount = modCount;          /**          * 带参构造器          * @param index 指定索引          */         ListItr(int index) {             // assert isPositionIndex(index);             // 对next和nextIndex进行赋值，所以next就是根据索引index查询出来的结点             next = (index == size) ? null : node(index);             nextIndex = index;         }          /**          * 判断是否还有下一个结点          * @return 如果还有后继结点则返回true，否则返回false          */         public boolean hasNext() {             // nextIndex表示当前结点的索引             // size表示元素的实际个数             // 如果nextIndex小于size则表示仍然还有后继结点，如果大于等于size那么表示要么是尾结点，要么索引越界了             return nextIndex &lt; size;         }          // 取下一个元素         public E next() {             // 1. 检查modCount和expectedModCount是否相等，如果不相等，表示发生了修改             checkForComodification();             // 2. 判断是否有下一个元素，如果没有则抛出NoSuchElementException异常             if (!hasNext()) // 表示hashNext()为false才会执行                 throw new NoSuchElementException();              // 3. 保存next结点             lastReturned = next;             // 4. 迭代器指向下一个结点             next = next.next;             // 5. 索引加1             nextIndex++;             // 6. 返回旧next结点的内容             return lastReturned.item;         }          /**          * 判断是否有前驱结点          * @return 如果有前驱结点返回true，否则返回false          */         public boolean hasPrevious() {             // 即判断nextIndex是否大于0             return nextIndex &gt; 0;         }          /**          * 获取前驱结点          * @return 返回前驱结点          */         public E previous() {             // 1. 检查modCount和expectedModCount是否相等，如果不相等，表示发生了修改             checkForComodification();             // 2. 判断是否有上一个元素，空表或只有一个元素都没有前驱结点，如果没有则抛出NoSuchElementException异常             if (!hasPrevious())                 throw new NoSuchElementException();              lastReturned = next = (next == null) ? last : next.prev;             nextIndex--;             return lastReturned.item;         }          /**          * 返回下一个结点的索引          * @return 下一个结点的索引值，从0开始的          */         public int nextIndex() {             // 直接返回nextIndex即可             return nextIndex;         }          /**          * 返回前驱结点的索引          * @return 前驱结点的索引          */         public int previousIndex() {             // 即nextIndex减去1的结果             return nextIndex - 1;         }          /**          * 使用迭代器进行迭代的时候不能进行调用list.remove()或list.add()删除修改元素，否则会抛出ConcurrentModificationException异常          * 所以如果要增加或删除元素需要使用迭代器Iterator内部的remove()和add()方法          */         public void remove() {             // 1. 检查modCount和expectedModCount是否相等，如果不相等，表示发生了修改             checkForComodification();             // 2. 判断lastReturned是否为null来判断迭代器的状态             if (lastReturned == null)                 throw new IllegalStateException();              // 3. 获取上一个结点的next结点的next结点，就是当前结点的后继结点             Node&lt;E&gt; lastNext = lastReturned.next;             // 4. 删除当前结点             unlink(lastReturned);              if (next == lastReturned)                 // 重新设置next结点，该指向被删除结点的下一个结点                 next = lastNext;             else                 nextIndex--;             // 将lastReturned置为null，便于回收             lastReturned = null;             // 同时expectedModCount修改次数加1             expectedModCount++;         }          /**          * 修改结点的值          * @param e 新值          */         public void set(E e) {             // 1. 检查迭代器的状态             if (lastReturned == null)                 throw new IllegalStateException();             // 2. 检查在迭代器进行迭代时是否修改了List集合             checkForComodification();             // 3. 直接修改当前结点的item属性值             lastReturned.item = e;         }          /**          * 添加结点          * @param e 待添加的结点内          */         public void add(E e) {             // 1. 检查在迭代时是否有修改List集合             checkForComodification();              // 2. 将lastReturned置为null             lastReturned = null;             // 3. 判断next是否为null             // 3.1 如果为null，表示next是尾结点，那么将结点添加在末尾即可             if (next == null)                 linkLast(e);             // 3.2 表示不为null，那么插入在next结点之前             else                 linkBefore(e, next);             // 4. 收尾处理             // 4.1 nextIndex需要加1             nextIndex++;             // 4.2 由于添加了元素，expectedModCount也需要加1             expectedModCount++;         }          public void forEachRemaining(Consumer&lt;? super E&gt; action) {             Objects.requireNonNull(action);             while (modCount == expectedModCount &amp;&amp; nextIndex &lt; size) {                 action.accept(next.item);                 lastReturned = next;                 next = next.next;                 nextIndex++;             }             checkForComodification();         }          /**          * 验证modCount的值和expectedModCount的值是否相等，所以当你在调用了ArrayList.add()或者ArrayList.remove()时，只更新了modCount的状态，而迭代器中的expectedModCount未同步，因此才会导致再次调用Iterator.next()方法时抛出异常。          */         final void checkForComodification() {             // 本质上判断modCount是否等于expectedModCount             if (modCount != expectedModCount)                 // 如果不相等表示在迭代时调用了list.add()或list.remove()，那么抛出此异常                 throw new ConcurrentModificationException();         }     }</code></pre> <p>其实我们最应该关注的是next()方法，查看下图</p> <p><img fetchpriority="high" decoding="async" alt="" height="489" src="http://img.555519.xyz/uploads/20230113/b46e9d2859b28cd4e014c752bbfa0878.jpg"></p> <p>从上图可以知道在创建迭代器时，next和nextIndex已经有内容了，看获得ListIterator迭代器的listIterator()方法</p> <p><img decoding="async" alt="" height="463" src="http://img.555519.xyz/uploads/20230113/d744d0a9b7d9d63bcc52f9e4a35d10bc.jpg"></p> <p>其中调用了ListItr构造器，默认索引index为0</p> <p><img decoding="async" alt="" height="388" src="http://img.555519.xyz/uploads/20230113/355e236fe7fc40d28da7b16a7115ef04.jpg"></p> <p>所以在调用next()方法时做了三件事：</p> <ul> <li>保存next结点，返回该结点的item内容</li> <li>将next结点指向下一个结点</li> <li>nextIndex索引加1</li> </ul> <p>注意上面Demo.java中的代码，当第六次调用next()时将抛出NoSuchElementException异常，从next()源码中我们可以查看它首先要判断是否还有下一个元素。</p> <p><img loading="lazy" decoding="async" alt="" height="640" src="http://img.555519.xyz/uploads/20230113/e2a0b093b08a3f879205eca8c0c9522c.jpg"></p> <p>没有下一个元素则抛出该异常。</p> <p>所以我们如果要遍历迭代器，应该如下：</p> <pre><code class="language-java">while (iterator.hasNext()) {     System.out.println(iterator.next()); }</code></pre> <p>但在遍历时可能遇到一个问题，如果你想删除或增加元素怎么办，看下面的代码：</p> <pre><code class="language-java">public class Demo {     public static void main(String[] args) throws IOException {         List&lt;String&gt; list = new LinkedList&lt;&gt;();         list.add("唐僧");         list.add("孙悟空");         list.add("猪八戒");         list.add("沙僧");         list.add("小白龙");          ListIterator&lt;String&gt; iterator = list.listIterator();         while (iterator.hasNext()) {             String next = iterator.next();             if(next.equals("孙悟空")){                 list.remove("孙悟空");             }         }     } }</code></pre> <p>那么运行就会报错</p> <p><img loading="lazy" decoding="async" alt="" height="124" src="http://img.555519.xyz/uploads/20230113/0a73985d7014e83737b1d4498582c14b.jpg"></p> <p>看抛出这个异常的源代码：</p> <p><img loading="lazy" decoding="async" alt="" height="156" src="http://img.555519.xyz/uploads/20230113/98465c17e6520efa68ba6f764647601d.jpg"></p> <p>原来如果modCount与expectedModCount不相等就会抛出异常。</p> <p>因为在你迭代之前，迭代器已经被通过list.itertor()创建出来了，如果在迭代的过程中，又对list进行了改变其容器大小的操作，那么Java就会给出异常。因为此时Iterator对象已经无法主动同步list做出的改变，Java会认为你做出这样的操作是线程不安全的，就会给出善意的提醒（抛出ConcurrentModificationException异常）。</p> <p>那么modCount与expectedModCount是怎么回事呢？</p> <ul> <li>modCount是在AbstractList中定义的一个变量，表示当前集合的增删次数，初始值为0，而LinkedList间接继承自AbstractList类，所以也有该属性，在该变量在对List进行添加（list.add()）或删除(list.remove())操作时进行加1处理，表示对集合进行了修改。</li> <li>expectedModCount是在ListItr类中定义的一个变量，表示当前迭代器的增删次数，该类实现了ListIteratror&lt;E&gt;接口，初始值为modCount，在调用该迭代器内部的添加和删除方法时才变化，平时不变化。</li> </ul> <p>在上面代码中我们在迭代器中调用了LinkedList类的add()或remove()方法，只更新了modCount值，而迭代器中的expectedModCount没有更新，所以会抛出异常。</p> <p>但如果调用ListIterator内部的remove()或add()方法就不会抛出此异常，因为同时更新了expectedModCount和modCount的值，如下源码能够证明：</p> <p><img loading="lazy" decoding="async" alt="" height="367" src="http://img.555519.xyz/uploads/20230113/e02565b4f39450e2e2619409271c35d9.jpg"></p> <p>使用的目的为了实现快速失败机制（fail-fast），在Java集合中有很多集合都实现了<strong>快速失败机制</strong>。</p> <p>快速失败机制产生的条件:当多个线程对Collection进行操作时，若其中某一个线程通过Iterator遍历集合时，该集合的内容被其他线程所改变，则会抛出ConcurrentModificationException异常。</p> <p>看下面的例子就是多线程产生快速失败：</p> <pre><code class="language-java">public class Demo {     public static List&lt;String&gt; list = new LinkedList&lt;&gt;();      public static void main(String[] args) throws IOException {         list.add("唐僧");         list.add("孙悟空");         list.add("猪八戒");         list.add("沙僧");         list.add("小白龙");          new Thread(new Runnable() {             @Override             public void run() {                 ListIterator&lt;String&gt; iterator = list.listIterator();                 while (iterator.hasNext()) {                     String next = iterator.next();                     System.out.println(next);                 }             }         }).start();          new Thread(new Runnable() {             @Override             public void run() {                 list.remove("猪八戒");             }         }).start();     } }</code></pre> <p>所以无论是单线程还是多线程为了避免抛出ConcurrentModificationException异常，也为了能够在使用迭代器遍历集合时对集合中元素进行增删操作，可以使用迭代器内部的remove()或add()方法。</p> <pre><code class="language-java">public class Demo {     public static List&lt;String&gt; list = new LinkedList&lt;&gt;();      public static void main(String[] args) throws IOException {         list.add("唐僧");         list.add("孙悟空");         list.add("猪八戒");         list.add("沙僧");         list.add("小白龙");          ListIterator&lt;String&gt; iterator = list.listIterator();         while (iterator.hasNext()) {             String next = iterator.next();             if (next.equals("猪八戒")) {                 iterator.remove();             }         }          for (String s : list) {             System.out.println(s);         }     } } /**  * 打印结果：  * 唐僧  * 孙悟空  * 沙僧  * 小白龙  */</code></pre> <p>参考连接：</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/zyuze/p/7726582.html"  rel="nofollow">深入理解Java中的迭代器</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/zymx14/article/details/78394464"  rel="nofollow">java中的fail-fast(快速失败)机制</a></li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-45065.htm">宠物店粮食一个月要多少吨呢 宠物店粮食一个月要多少吨呢</a></p>
+                                        <p>下一个：<a href="/news/article-45551.htm">java实现机械表</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-34260.htm" title="一片枫叶一片红什么意思（一片枫叶一片红什么意思呀）">一片枫叶一片红什么意思（一片枫叶一片红什么意思呀）</a></li>
+                        <li class="py-2"><a href="/news/article-22081.htm" title="中国宠物粮品牌排行榜前十（中国十大宠物粮）">中国宠物粮品牌排行榜前十（中国十大宠物粮）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-high-speed-nodes.htm" title="「11月19日」最高速度20.3M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费机场订阅节点链接">「11月19日」最高速度20.3M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-node-share.htm" title="「11月7日」最高速度21.6M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费机场订阅节点链接">「11月7日」最高速度21.6M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-hiddify-next-node.htm" title="「1月12日」最高速度21.1M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接">「1月12日」最高速度21.1M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-35571.htm" title="HTML5画布变形">HTML5画布变形</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-hiddify-next-windows.htm" title="「12月12日」最高速度19.6M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费机场订阅节点链接">「12月12日」最高速度19.6M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-high-speed-nodes.htm" title="「12月21日」最高速度20M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费机场订阅节点链接">「12月21日」最高速度20M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-32365.htm" title="猫多长时间驱虫一次体内（猫咪到底多久驱虫一次）">猫多长时间驱虫一次体内（猫咪到底多久驱虫一次）</a></li>
+                        <li class="py-2"><a href="/news/article-28100.htm" title="宠物兽医证可以自考自学吗（宠物兽医证好考吗）">宠物兽医证可以自考自学吗（宠物兽医证好考吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeSSRNode免费节点官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- loader -->
+      <div id="loader" class="show fullscreen">
+          <svg class="circular" width="48px" height="48px">
+              <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+              <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78" />
+          </svg>
+      </div>
+      <script src="/assets/website/js/frontend/freessrnode/jquery-3.5.1.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery-migrate-3.0.1.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery-ui.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/popper.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/bootstrap.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/owl.carousel.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.stellar.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.countdown.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/bootstrap-datepicker.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.easing.1.3.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/aos.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.fancybox.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.sticky.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/jquery.mb.YTPlayer.min.js"></script>
+      <script src="/assets/website/js/frontend/freessrnode/main.js"></script>
+      <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+      <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!-- .site-wrap -->
+</body>
+
+</html>
