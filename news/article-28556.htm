@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://freessrnode.github.io/news/article-28556.htm" />
     <title>php代码审计之——phpstorm动态调试</title>
         <meta name="description" content="xdebug调试 调试环境部署 xdebug的版本需要与PHP版本相对于，所以不要轻易改变PHP环境版本。 0 配置php解析器  1 下载对应版本的xdebug xdebug官网下载地址：https" />
         <link rel="icon" href="/assets/website/img/freessrnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeSSRNode免费节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freessrnode.github.io/news/article-28556.htm" />
+    <meta property="og:site_name" content="FreeSSRNode免费节点官网" />
+    <meta property="og:title" content="php代码审计之——phpstorm动态调试" />
+    <meta property="og:image" content="https://freessrnode.github.io/uploads/20240813/44f4ea97cbbb0b604f8914395a81a2df.webp" />
+        <meta property="og:release_date" content="2024-12-20T09:37:22" />
+    <meta property="og:updated_time" content="2024-12-20T09:37:22" />
+        <meta property="og:description" content="xdebug调试 调试环境部署 xdebug的版本需要与PHP版本相对于，所以不要轻易改变PHP环境版本。 0 配置php解析器  1 下载对应版本的xdebug xdebug官网下载地址：https" />
+        
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="php代码审计之——phpstorm动态调试">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="__ADDON__/fonts/freessrnode/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/freessrnode/icomoon/style.css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/jquery-ui.css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.carousel.min.css">
@@ -17,7 +46,7 @@
     <link rel="stylesheet" href="/assets/website/css/freessrnode/owl.theme.default.min.css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="__ADDON__/fonts/freessrnode/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/fonts/freessrnode/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/aos.css">
     <link href="/assets/website/css/freessrnode/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/website/css/freessrnode/style.css">
@@ -96,7 +125,7 @@
                 </div>
             </div>
         </header>
-        <div class="intro-section small" style="background-image: url('__ADDON__/img/freessrnode/hero_1.jpg');">
+        <div class="intro-section small" style="background-image: url('/assets/website/img/freessrnode/hero_1.jpg');">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-7 mx-auto text-center" data-aos="fade-up">
@@ -128,16 +157,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-node-subscribe.htm" title="「11月21日」最高速度22.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费机场订阅节点链接">「11月21日」最高速度22.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-18897.htm" title="动物疫苗生产企业排行榜前十 动物疫苗生产企业排行榜前十名">动物疫苗生产企业排行榜前十 动物疫苗生产企业排行榜前十名</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-5-hiddify-next-node.htm" title="「9月5日」最高速度20.3M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费机场订阅节点链接">「9月5日」最高速度20.3M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-32363.htm" title="二叉树与堆">二叉树与堆</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-31-free-high-speed-nodes.htm" title="「8月31日」最高速度18.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费机场订阅节点链接">「8月31日」最高速度18.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-34263.htm" title="兽医职业资格证书网上查询（兽医执业证官网）">兽医职业资格证书网上查询（兽医执业证官网）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-26-node-share-links.htm" title="「9月26日」最高速度19.3M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费机场订阅节点链接">「9月26日」最高速度19.3M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-25771.htm" title="宠物领养协议书范本图片高清版 宠物领养协议书范本图片高清版大全">宠物领养协议书范本图片高清版 宠物领养协议书范本图片高清版大全</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-1-latest-hiddify-next-node.htm" title="「10月1日」最高速度22.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费机场订阅节点链接">「10月1日」最高速度22.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-7-hiddify-next-node-github.htm" title="「12月7日」最高速度22.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费机场订阅节点链接">「12月7日」最高速度22.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-42573.htm" title="动物防疫站***免费吗现在多少钱（动物防疫中心可以打疫苗吗）">动物防疫站***免费吗现在多少钱（动物防疫中心可以打疫苗吗）</a></li>
+                        <li class="py-2"><a href="/news/article-50036.htm" title="领养宠物需要具备什么条件（领养宠物需要什么条件和手续2021）">领养宠物需要具备什么条件（领养宠物需要什么条件和手续2021）</a></li>
+                        <li class="py-2"><a href="/news/article-28558.htm" title="宠物粮食加工厂设备生产厂家有哪些呢视频 宠物粮食加工厂设备生产厂家有哪些呢视频讲解">宠物粮食加工厂设备生产厂家有哪些呢视频 宠物粮食加工厂设备生产厂家有哪些呢视频讲解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="「12月17日」最高速度20.7M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费机场订阅节点链接">「12月17日」最高速度20.7M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-30-latest-hiddify-next-node.htm" title="「12月30日」最高速度19.5M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接">「12月30日」最高速度19.5M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-40110.htm" title="深圳安盛智能科技有限公司(深圳市安盛信息技术有限公司)">深圳安盛智能科技有限公司(深圳市安盛信息技术有限公司)</a></li>
+                        <li class="py-2"><a href="/news/article-49520.htm" title="Java空指针异常和解决办法">Java空指针异常和解决办法</a></li>
+                        <li class="py-2"><a href="/news/article-45065.htm" title="宠物店粮食一个月要多少吨呢 宠物店粮食一个月要多少吨呢">宠物店粮食一个月要多少吨呢 宠物店粮食一个月要多少吨呢</a></li>
+                        <li class="py-2"><a href="/news/article-39588.htm" title="离我最近的美容院在哪里广州市黄埔区大沙地（广州市黄埔区大沙地有什么好玩的）">离我最近的美容院在哪里广州市黄埔区大沙地（广州市黄埔区大沙地有什么好玩的）</a></li>
+                        <li class="py-2"><a href="/news/article-24353.htm" title="动物疫苗在哪买（动物疫苗在哪买比较好）">动物疫苗在哪买（动物疫苗在哪买比较好）</a></li>
                     </ul>
     </div>
 </div>
@@ -149,22 +178,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
