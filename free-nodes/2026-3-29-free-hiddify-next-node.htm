@@ -322,19 +322,14 @@ sudo apt-get install -f   </span><span><span class="hljs-comment"># 修复依赖
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的 Proxy Group 能实现哪些策略？</h5></div>
+    <div class="panel-body">
+        Proxy Group 可以定义多种策略，如按延迟选择、随机、轮询或手动选择节点。结合分流规则，可实现针对不同网站或应用的智能代理，提高网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何通过规则文件优化流量分配？</h5></div>
     <div class="panel-body">
         Clash 支持自定义规则文件，可根据域名、IP 或应用类型分流流量。结合策略组使用，可自动将视频、游戏、浏览器等流量分配到最优节点，提高访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则订阅更新有哪些注意事项？</h5></div>
-    <div class="panel-body">
-        Clash 订阅更新需保证网络畅通，规则文件格式正确，并与客户端版本兼容。建议定期更新规则以获得最新节点和分流规则，同时注意避免频繁刷新造成性能问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 如何实现按应用分流？</h5></div>
-    <div class="panel-body">
-        QuantumultX 可以根据不同应用程序的流量类型设置分流规则，通过策略组选择最优节点。这样可保证游戏、视频和浏览器流量经过最优节点，提高访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 模式在高延迟网络中表现如何？</h5></div>
@@ -342,24 +337,9 @@ sudo apt-get install -f   </span><span><span class="hljs-comment"># 修复依赖
         XTLS 模式通过减少握手和加密开销降低延迟，在高延迟环境中保证连接稳定。结合策略组和多出口节点使用，可提供更流畅的网页浏览、视频播放和游戏体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆插件如何增强隐蔽性？</h5></div>
-    <div class="panel-body">
-        混淆插件可模拟正常协议特征，如 HTTP 或 TLS 流量，使 SSR 流量难以被检测。合理选择混淆方式和协议，可提升在高封锁环境下的长期稳定性和安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的路由规则如何实现国内直连？</h5></div>
     <div class="panel-body">
         通过配置域名列表或 IP 段，将国内流量指向直连出口，而国外流量走代理节点。结合策略组和定期更新规则，可保持国内访问速度，同时优化海外访问体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的节点分类功能有哪些好处？</h5></div>
-    <div class="panel-body">
-        节点分类可以按地区、延迟或用途分组，结合策略组实现自动分流。这样可以快速选择最佳节点，管理大量节点更加高效，同时提升访问速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Proxy Group 能实现哪些策略？</h5></div>
-    <div class="panel-body">
-        Proxy Group 可以定义多种策略，如按延迟选择、随机、轮询或手动选择节点。结合分流规则，可实现针对不同网站或应用的智能代理，提高网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的连接失败常见原因有哪些？</h5></div>
@@ -369,7 +349,27 @@ sudo apt-get install -f   </span><span><span class="hljs-comment"># 修复依赖
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 节点订阅自动更新如何设置？</h5></div>
     <div class="panel-body">
-        用户可添加订阅 URL，Nekoray 会定期自动下载并更新节点列表。保持节点最新可减少手动维护，提高节点可用性和网络连接稳定性，确保科学上网体验顺畅。    </div>
+        用户可添加订阅 URL，Nekoray 会定期自动下载并更新节点列表。保持节点最新可减少手动维护，提高节点可用性和网络连接稳定性，确保科学上网体验顺畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 如何实现按应用分流？</h5></div>
+    <div class="panel-body">
+        QuantumultX 可以根据不同应用程序的流量类型设置分流规则，通过策略组选择最优节点。这样可保证游戏、视频和浏览器流量经过最优节点，提高访问速度和网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆插件如何增强隐蔽性？</h5></div>
+    <div class="panel-body">
+        混淆插件可模拟正常协议特征，如 HTTP 或 TLS 流量，使 SSR 流量难以被检测。合理选择混淆方式和协议，可提升在高封锁环境下的长期稳定性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的规则订阅更新有哪些注意事项？</h5></div>
+    <div class="panel-body">
+        Clash 订阅更新需保证网络畅通，规则文件格式正确，并与客户端版本兼容。建议定期更新规则以获得最新节点和分流规则，同时注意避免频繁刷新造成性能问题。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 的节点分类功能有哪些好处？</h5></div>
+    <div class="panel-body">
+        节点分类可以按地区、延迟或用途分组，结合策略组实现自动分流。这样可以快速选择最佳节点，管理大量节点更加高效，同时提升访问速度和稳定性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -398,16 +398,16 @@ sudo apt-get install -f   </span><span><span class="hljs-comment"># 修复依赖
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-20-hiddify-next-node.htm" title="「3月20日」最高速度22.5M/S，2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点每天更新免费机场订阅节点链接">「3月20日」最高速度22.5M/S，2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-26-hiddify-next-node-share.htm" title="「3月26日」最高速度20.2M/S，2025年V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点每天更新免费机场订阅节点链接">「3月26日」最高速度20.2M/S，2025年V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-12-hiddify-next-windows.htm" title="「3月12日」最高速度20.6M/S，2025年Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接">「3月12日」最高速度20.6M/S，2025年Trojan节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-21-free-hiddify-next-node.htm" title="「3月21日」最高速度18M/S，2025年Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接">「3月21日」最高速度18M/S，2025年Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-5-hiddify-next-node-github.htm" title="「3月5日」最高速度20.7M/S，2025年Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接">「3月5日」最高速度20.7M/S，2025年Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-11-latest-hiddify-next-node.htm" title="「3月11日」最高速度18.4M/S，2025年Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接">「3月11日」最高速度18.4M/S，2025年Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-2-hiddify-next-node-github.htm" title="「4月2日」最高速度21.2M/S，2025年Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接">「4月2日」最高速度21.2M/S，2025年Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-12-hiddify-next-node.htm" title="「4月12日」最高速度19.8M/S，2025年Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接">「4月12日」最高速度19.8M/S，2025年Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-4-hiddify-next-node-github.htm" title="「3月4日」最高速度18.3M/S，2025年Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点每天更新免费机场订阅节点链接">「3月4日」最高速度18.3M/S，2025年Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-3-16-free-node-subscribe-links.htm" title="「3月16日」最高速度22M/S，2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点每天更新免费机场订阅节点链接">「3月16日」最高速度22M/S，2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-19-node-share-links.htm" title="「3月19日」最高速度19.3M/S，2025年Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接">「3月19日」最高速度19.3M/S，2025年Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-28-latest-hiddify-next-node.htm" title="「3月28日」最高速度21.4M/S，2025年Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接">「3月28日」最高速度21.4M/S，2025年Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-9-node-share.htm" title="「3月9日」最高速度21.3M/S，2025年Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/V2ray节点每天更新免费机场订阅节点链接">「3月9日」最高速度21.3M/S，2025年Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/V2ray节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-9-hiddify-next-node-share.htm" title="「4月9日」最高速度19.5M/S，2025年Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点每天更新免费机场订阅节点链接">「4月9日」最高速度19.5M/S，2025年Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-13-free-hiddify-next-node.htm" title="「3月13日」最高速度21.3M/S，2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接">「3月13日」最高速度21.3M/S，2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-5-hiddify-next-node-github.htm" title="「3月5日」最高速度20.7M/S，2025年Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接">「3月5日」最高速度20.7M/S，2025年Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-8-node-share-links.htm" title="「3月8日」最高速度22.6M/S，2025年Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点每天更新免费机场订阅节点链接">「3月8日」最高速度22.6M/S，2025年Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-22-free-subscribe-node.htm" title="「3月22日」最高速度22M/S，2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点每天更新免费机场订阅节点链接">「3月22日」最高速度22M/S，2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-11-latest-hiddify-next-node.htm" title="「3月11日」最高速度18.4M/S，2025年Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接">「3月11日」最高速度18.4M/S，2025年Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
@@ -419,7 +419,7 @@ sudo apt-get install -f   </span><span><span class="hljs-comment"># 修复依赖
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
