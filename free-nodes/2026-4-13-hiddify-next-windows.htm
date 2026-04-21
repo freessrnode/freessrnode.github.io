@@ -172,34 +172,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 能否手动添加节点？</h5></div>
-    <div class="panel-body">
-        Potatso Lite 支持手动添加 Shadowsocks 节点。用户在“配置”中选择添加节点，输入服务器、端口、加密方式等信息即可建立连接，适合手动管理单个线路。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 是否支持 UDP 协议转发？</h5></div>
     <div class="panel-body">
         原版 SSR 并不完全支持 UDP 转发，但部分魔改版本（如 SSRR）支持该功能。可在配置中开启 udp-over-tcp 模式或使用 Socks5 UDP relay 方案实现游戏等实时通信的代理需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 与 Trojan 在性能上差异大吗？</h5></div>
+    <div class="panel-heading"><h5>Hysteria2 的拥塞控制算法是什么？</h5></div>
     <div class="panel-body">
-        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的协议插件如何增强安全性？</h5></div>
-    <div class="panel-body">
-        协议插件可隐藏真实流量特征并模拟正常协议，防止被封锁或 DPI 检测。结合加密方式和混淆方法，可以提升节点的稳定性和长期可用性，保证数据传输安全。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 的传输效率比 Trojan 高吗？</h5></div>
-    <div class="panel-body">
-        在高延迟环境下，VLESS + XTLS 的性能通常比 Trojan 高。XTLS 去掉了冗余加密开销，降低 CPU 占用，提高多连接场景下的吞吐率，尤其在服务器高负载情况下表现更佳。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 混淆方式如何提升抗封锁能力？</h5></div>
-    <div class="panel-body">
-        混淆方式可将流量伪装成正常 HTTPS 或 HTTP 数据，降低被 DPI 检测风险。合理选择协议和混淆组合，可以提升节点稳定性和长期可用性，确保科学上网顺畅。<hr />    </div>
+        Hysteria2 基于 QUIC 协议，采用 BBR 拥塞控制算法。相比传统 TCP 机制，BBR 能更好地利用带宽资源，提高高延迟网络下的吞吐率和响应速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 是否还值得使用？</h5></div>
@@ -207,9 +187,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         虽然 SSR 的开发早已停止，但由于它配置简单且部分节点仍然兼容，仍有一定使用场景。不过建议用户逐步迁移到更安全的新协议如 VLESS 或 Trojan，以获得更佳性能与隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + Reality 与 Trojan 在性能上差异大吗？</h5></div>
+    <div class="panel-body">
+        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 混淆方式如何提升抗封锁能力？</h5></div>
+    <div class="panel-body">
+        混淆方式可将流量伪装成正常 HTTPS 或 HTTP 数据，降低被 DPI 检测风险。合理选择协议和混淆组合，可以提升节点稳定性和长期可用性，确保科学上网顺畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 能否手动添加节点？</h5></div>
+    <div class="panel-body">
+        Potatso Lite 支持手动添加 Shadowsocks 节点。用户在“配置”中选择添加节点，输入服务器、端口、加密方式等信息即可建立连接，适合手动管理单个线路。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 的内置延迟测试为什么与系统 ping 不同？</h5></div>
     <div class="panel-body">
         客户端的延迟测试通常基于 TCP 或特定探测包，而系统 ping 使用 ICMP，两者网络路径与优先级可能不同。此外，防火墙或服务器对 ICMP 的响应可能被限制，导致测试结果存在差异。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的协议插件如何增强安全性？</h5></div>
+    <div class="panel-body">
+        协议插件可隐藏真实流量特征并模拟正常协议，防止被封锁或 DPI 检测。结合加密方式和混淆方法，可以提升节点的稳定性和长期可用性，保证数据传输安全。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2RayN 与 WinXray 哪个更易用？</h5></div>
@@ -217,9 +217,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         V2RayN 界面更简洁，功能更稳定，而 WinXray 提供了更现代的界面和自动测速功能。对于初学者来说，V2RayN 上手更快；而追求高级功能的用户可能更喜欢 WinXray。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的拥塞控制算法是什么？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 的传输效率比 Trojan 高吗？</h5></div>
     <div class="panel-body">
-        Hysteria2 基于 QUIC 协议，采用 BBR 拥塞控制算法。相比传统 TCP 机制，BBR 能更好地利用带宽资源，提高高延迟网络下的吞吐率和响应速度。    </div>
+        在高延迟环境下，VLESS + XTLS 的性能通常比 Trojan 高。XTLS 去掉了冗余加密开销，降低 CPU 占用，提高多连接场景下的吞吐率，尤其在服务器高负载情况下表现更佳。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -248,16 +248,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-11-latest-hiddify-next-node.htm" title="「3月11日」最高速度18.4M/S，2025年Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接">「3月11日」最高速度18.4M/S，2025年Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-11-hiddify-next-node.htm" title="「4月11日」最高速度18.9M/S，2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接">「4月11日」最高速度18.9M/S，2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-13-hiddify-next-windows.htm" title="「4月13日」最高速度18.5M/S，2025年Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点每天更新免费机场订阅节点链接">「4月13日」最高速度18.5M/S，2025年Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-25-hiddify-next-windows.htm" title="「3月25日」最高速度19.5M/S，2025年Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点每天更新免费机场订阅节点链接">「3月25日」最高速度19.5M/S，2025年Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-8-node-share-links.htm" title="「3月8日」最高速度22.6M/S，2025年Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点每天更新免费机场订阅节点链接">「3月8日」最高速度22.6M/S，2025年Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-29-free-hiddify-next-node.htm" title="「3月29日」最高速度18.7M/S，2025年Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点每天更新免费机场订阅节点链接">「3月29日」最高速度18.7M/S，2025年Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-10-latest-hiddify-next-node.htm" title="「4月10日」最高速度20.4M/S，2025年V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/Clash节点每天更新免费机场订阅节点链接">「4月10日」最高速度20.4M/S，2025年V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点/Clash节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-14-node-share-links.htm" title="「4月14日」最高速度18.7M/S，2025年SSR节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接">「4月14日」最高速度18.7M/S，2025年SSR节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-22-free-subscribe-node.htm" title="「3月22日」最高速度22M/S，2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点每天更新免费机场订阅节点链接">「3月22日」最高速度22M/S，2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-26-hiddify-next-node-share.htm" title="「3月26日」最高速度20.2M/S，2025年V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点每天更新免费机场订阅节点链接">「3月26日」最高速度20.2M/S，2025年V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-3-4-hiddify-next-node-github.htm" title="「3月4日」最高速度18.3M/S，2025年Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点每天更新免费机场订阅节点链接">「3月4日」最高速度18.3M/S，2025年Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-9-node-share.htm" title="「3月9日」最高速度21.3M/S，2025年Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/V2ray节点每天更新免费机场订阅节点链接">「3月9日」最高速度21.3M/S，2025年Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/V2ray节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-18-latest-hiddify-next-node.htm" title="「3月18日」最高速度19.8M/S，2025年V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接">「3月18日」最高速度19.8M/S，2025年V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-10-free-hiddify-next-node.htm" title="「3月10日」最高速度20.8M/S，2025年V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点每天更新免费机场订阅节点链接">「3月10日」最高速度20.8M/S，2025年V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-2-hiddify-next-node-github.htm" title="「4月2日」最高速度21.2M/S，2025年Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接">「4月2日」最高速度21.2M/S，2025年Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-21-free-hiddify-next-node.htm" title="「3月21日」最高速度18M/S，2025年Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接">「3月21日」最高速度18M/S，2025年Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-27-hiddify-next-github.htm" title="「3月27日」最高速度20.7M/S，2025年Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点每天更新免费机场订阅节点链接">「3月27日」最高速度20.7M/S，2025年Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-7-today-hiddify-next-node.htm" title="「3月7日」最高速度21.4M/S，2025年Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点每天更新免费机场订阅节点链接">「3月7日」最高速度21.4M/S，2025年Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-8-node-share-links.htm" title="「3月8日」最高速度22.6M/S，2025年Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点每天更新免费机场订阅节点链接">「3月8日」最高速度22.6M/S，2025年Clash节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
@@ -269,7 +269,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
