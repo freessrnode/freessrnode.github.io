@@ -229,44 +229,14 @@ A5: 目前而言，IPL的基础订阅服务是免费的，但可能会推出一�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的证书配置错误会导致什么问题？</h5></div>
-    <div class="panel-body">
-        如果 TLS 证书无效或域名不匹配，Trojan 客户端将无法建立安全连接，导致节点无法使用。需要确保证书有效、域名正确，才能保证正常访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现国内直连？</h5></div>
-    <div class="panel-body">
-        通过配置域名列表或 IP 段，将国内流量指向直连出口，而国外流量走代理节点。结合策略组和定期更新规则，可保持国内访问速度，同时优化海外访问体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 服务器如何防止被扫描到真实 IP？</h5></div>
-    <div class="panel-body">
-        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式与系统全局代理有何区别？</h5></div>
-    <div class="panel-body">
-        TUN 模式直接拦截 IP 层流量，不依赖应用代理设置，系统全局代理通常只影响支持 HTTP/HTTPS 的程序。TUN 更适合全局科学上网和游戏环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 可以在哪些平台使用？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 是一款 iOS 平台专用代理客户端，支持多种协议如 Vmess、Shadowsocks、Trojan 等。用户可通过导入订阅链接快速配置节点，配合规则分流功能实现精准网络代理。由于其强大功能，它是 iPhone 用户常用的科学上网工具。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何通过策略组优化科学上网？</h5></div>
-    <div class="panel-body">
-        PassWall2 结合策略组和节点延迟检测功能，可自动选择最佳节点处理网页、视频和游戏流量。无需手动干预，保证访问速度和网络稳定性，提高整体体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 全局与规则代理如何选择？</h5></div>
     <div class="panel-body">
         全局代理将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，用户可根据需求灵活选择模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Trojan 协议吗？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 可以在哪些平台使用？</h5></div>
     <div class="panel-body">
-        WinXray 内核基于 Xray-core，因此原生支持 Trojan 协议。用户在导入配置时，只需选择 Trojan 类型节点即可，无需额外插件，非常适合需要 TLS 伪装的环境。<hr />    </div>
+        Shadowrocket 是一款 iOS 平台专用代理客户端，支持多种协议如 Vmess、Shadowsocks、Trojan 等。用户可通过导入订阅链接快速配置节点，配合规则分流功能实现精准网络代理。由于其强大功能，它是 iPhone 用户常用的科学上网工具。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 如何选择全局代理与规则代理模式？</h5></div>
@@ -276,7 +246,37 @@ A5: 目前而言，IPL的基础订阅服务是免费的，但可能会推出一�
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 与 Hiddify Next 有什么区别？</h5></div>
     <div class="panel-body">
-        Nekobox 更注重轻量化和本地化，界面简洁，支持多协议基础功能；而 Hiddify Next 则整合了订阅转换、测速、规则分流等高级功能，更适合技术用户使用。    </div>
+        Nekobox 更注重轻量化和本地化，界面简洁，支持多协议基础功能；而 Hiddify Next 则整合了订阅转换、测速、规则分流等高级功能，更适合技术用户使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的证书配置错误会导致什么问题？</h5></div>
+    <div class="panel-body">
+        如果 TLS 证书无效或域名不匹配，Trojan 客户端将无法建立安全连接，导致节点无法使用。需要确保证书有效、域名正确，才能保证正常访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 支持 Trojan 协议吗？</h5></div>
+    <div class="panel-body">
+        WinXray 内核基于 Xray-core，因此原生支持 Trojan 协议。用户在导入配置时，只需选择 Trojan 类型节点即可，无需额外插件，非常适合需要 TLS 伪装的环境。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式与系统全局代理有何区别？</h5></div>
+    <div class="panel-body">
+        TUN 模式直接拦截 IP 层流量，不依赖应用代理设置，系统全局代理通常只影响支持 HTTP/HTTPS 的程序。TUN 更适合全局科学上网和游戏环境。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何通过策略组优化科学上网？</h5></div>
+    <div class="panel-body">
+        PassWall2 结合策略组和节点延迟检测功能，可自动选择最佳节点处理网页、视频和游戏流量。无需手动干预，保证访问速度和网络稳定性，提高整体体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 服务器如何防止被扫描到真实 IP？</h5></div>
+    <div class="panel-body">
+        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现国内直连？</h5></div>
+    <div class="panel-body">
+        通过配置域名列表或 IP 段，将国内流量指向直连出口，而国外流量走代理节点。结合策略组和定期更新规则，可保持国内访问速度，同时优化海外访问体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -324,16 +324,16 @@ A5: 目前而言，IPL的基础订阅服务是免费的，但可能会推出一�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-1.htm" title="「10月1日」最高速度20M/S，2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/Singbox节点每天更新免费机场订阅节点链接">「10月1日」最高速度20M/S，2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/Singbox节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-free-hiddify-next-node.htm" title="「9月24日」最高速度20.6M/S，2025年Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点每天更新免费机场订阅节点链接">「9月24日」最高速度20.6M/S，2025年Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-27.htm" title="「9月27日」最高速度22.3M/S，2025年Trojan节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接">「9月27日」最高速度22.3M/S，2025年Trojan节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-17.htm" title="「10月17日」最高速度22.6M/S，2025年Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点每天更新免费机场订阅节点链接">「10月17日」最高速度22.6M/S，2025年Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-20-node-share.htm" title="「9月20日」最高速度18.9M/S，2025年Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点每天更新免费机场订阅节点链接">「9月20日」最高速度18.9M/S，2025年Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-3.htm" title="「9月3日」最高速度19.1M/S，2025年SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接">「9月3日」最高速度19.1M/S，2025年SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-9.htm" title="「9月9日」最高速度19.4M/S，2025年V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点每天更新免费机场订阅节点链接">「9月9日」最高速度19.4M/S，2025年V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/hiddify-next-windows-2026-9-19.htm" title="「9月19日」最高速度21.7M/S，2025年Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/SSR节点每天更新免费机场订阅节点链接">「9月19日」最高速度21.7M/S，2025年Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/SSR节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-28-hiddify-next-github.htm" title="「10月28日」最高速度18.9M/S，2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接">「10月28日」最高速度18.9M/S，2025年Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-free-subscribe-node.htm" title="「9月10日」最高速度22.5M/S，2025年Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点每天更新免费机场订阅节点链接">「9月10日」最高速度22.5M/S，2025年Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-8-node-share.htm" title="「10月8日」最高速度18.6M/S，2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接">「10月8日」最高速度18.6M/S，2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-3.htm" title="「10月3日」最高速度22.9M/S，2025年SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点每天更新免费机场订阅节点链接">「10月3日」最高速度22.9M/S，2025年SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-22-free-hiddify-next-node.htm" title="「10月22日」最高速度18.1M/S，2025年Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点每天更新免费机场订阅节点链接">「10月22日」最高速度18.1M/S，2025年Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/latest-hiddify-next-node-2026-11-3.htm" title="「11月3日」最高速度20.2M/S，2025年SSR节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点每天更新免费机场订阅节点链接">「11月3日」最高速度20.2M/S，2025年SSR节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/hiddify-next-node-github-2026-10-27.htm" title="「10月27日」最高速度19.2M/S，2025年Singbox节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接">「10月27日」最高速度19.2M/S，2025年Singbox节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/hiddify-next-node-share-2026-10-11.htm" title="「10月11日」最高速度21.3M/S，2025年Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点每天更新免费机场订阅节点链接">「10月11日」最高速度21.3M/S，2025年Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/hiddify-next-node-github-2026-9-17.htm" title="「9月17日」最高速度21.6M/S，2025年V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点每天更新免费机场订阅节点链接">「9月17日」最高速度21.6M/S，2025年V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/hiddify-next-node-github-2026-11-5.htm" title="「11月5日」最高速度22.7M/S，2025年V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/Trojan节点每天更新免费机场订阅节点链接">「11月5日」最高速度22.7M/S，2025年V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/Trojan节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-25.htm" title="「10月25日」最高速度19.7M/S，2025年Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点每天更新免费机场订阅节点链接">「10月25日」最高速度19.7M/S，2025年Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-15.htm" title="「9月15日」最高速度20.5M/S，2025年Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接">「9月15日」最高速度20.5M/S，2025年Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费机场订阅节点链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -345,7 +345,10 @@ A5: 目前而言，IPL的基础订阅服务是免费的，但可能会推出一�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
